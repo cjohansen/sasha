@@ -1,0 +1,11 @@
+^{:watch-dirs ["src" "portfolio"]
+  :ring-server-options {:port 9800}
+  :css-dirs ["resources/public/css"]}
+{:main sasha.portfolio
+ :optimizations :none
+ :pretty-print true
+ :source-map true
+ :devcards true
+ :asset-path "/js/compiled/out"
+ :output-to "dev-resources/public/js/compiled/sasha.js"
+ :output-dir "dev-resources/public/js/compiled/out"}

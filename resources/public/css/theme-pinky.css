@@ -1,0 +1,55 @@
+:root {
+  --imperial: #552a6a;
+  --amaranth: #e83369;
+  --brick-rojo: #cd2d5d;
+  --mexican-rojo: #992245;
+  --west-side: #ff8f0f;
+  --deep-lemon: #ffca1c;
+  --dandelion: #ffda61;
+  --lima: #54cc2c;
+
+  --wafer: #dfcec2;
+  --flint: #736e69;
+
+  --cloud-burst: #1e2f4e;
+  --cinnabar: #e54d42;
+  --blizzard: #b7e6f2;
+  --curious-azul: #3a99d9;
+  --fun-azul: #1369a3;
+
+  --woodsmoke: #18181a;
+  --cod-gris: #1a1a1a;
+  --mine-shaft: #282828;
+  --mine-shaft-light: #303030;
+  --scorpion: #606060;
+  --silver-chalice: #a6a6a6;
+  --mercury: #e6e6e6;
+
+  --page-width: 800px;
+
+  --spinner-color: var(--amaranth);
+
+  --link-color: var(--amaranth);
+  --button-color: var(--brick-rojo);
+  --button-highlight-color: var(--amaranth);
+  --button-engage-color: var(--mexican-rojo);
+  --button-fg: #ffffff;
+  --subtle-border: var(--mine-shaft);
+}
+
+.dark-mode {
+  --bg: var(--mine-shaft);
+  --fg: var(--mercury);
+  --input-bg: var(--cod-gris);
+  --input-fg: var(--scorpion);
+  --input-placeholder: var(--scorpion);
+  --input-focus: var(--mercury);
+}
+
+.light-mode {
+  --fg: var(--mine-shaft);
+  --input-bg: #fff;
+  --input-fg: var(--scorpion);
+  --input-placeholder: var(--scorpion);
+  --input-focus: var(--woodsmoke);
+}

@@ -1,0 +1,11 @@
+{:paths ["src" "resources"]
+ :deps {cjohansen/dumdom {:mvn/version "2022.09.28"}}
+ :aliases
+ {:dev {:extra-paths ["portfolio" "dev-resources"]
+        :extra-deps {org.clojure/clojure {:mvn/version "1.11.1"}
+                     org.clojure/clojurescript {:mvn/version "1.11.60"}
+                     com.bhauman/figwheel-main {:mvn/version "0.2.18"}
+                     cider/piggieback {:mvn/version "0.5.3"}
+                     cjohansen/gadget-inspector {:mvn/version "0.2020.09.10"}
+                     no.cjohansen/portfolio {:git/url "https://github.com/cjohansen/portfolio"
+                                             :sha "5f9d05e933a4e64af54740c016a7a81ddef583fc"}}}}}

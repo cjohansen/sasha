@@ -1,0 +1,197 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  font-family: 'DM Sans', arial, sans-serif;
+  letter-spacing: normal;
+  line-height: 1.33;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a,
+a:link,
+a:visited,
+.link {
+  color: var(--link-color);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:hover,
+a:link:hover,
+a:visited:hover,
+a.inverted,
+a.inverted:link,
+a.inverted:visited,
+.link:hover {
+  text-decoration: underline;
+}
+
+.h1 {font-size: 2rem; line-height: 1.2;}
+.h2 {font-size: 1.8125rem;}
+.h3 {font-size: 1.625rem;}
+.h4 {font-size: 1.4375rem;}
+.h5 {font-size: 1.25rem;}
+.h6 {font-size: 1rem;}
+
+/* Text styles */
+.text-xs {font-size: 0.75rem;}
+.text-s {font-size: 0.875rem;}
+.text-m {font-size: 1.0rem;}
+.text-l {font-size: 1.125rem;}
+.text-xl {font-size: 1.125rem; line-height: 1.45;}
+.strong, strong {font-weight: 500;}
+.stronger {font-weight: 600;}
+
+@media only screen and (min-width: 750px) {
+  .h1 {font-size: 2.875rem;}
+  .h2 {font-size: 2.5625rem;}
+  .h3 {font-size: 2.25rem;}
+  .h4 {font-size: 1.8125rem;}
+  .h5 {font-size: 1.625rem;}
+  p, .h6, ul, ol {font-size: 1.125rem;}
+  .text-xl, .text-xl p, .text-xl div {font-size: 1.4375rem;}
+  .text-l, .text-l p, .text-l div {font-size: 1.25rem;}
+  .text-s, .text-s p, .text-s div {font-size: 1rem;}
+  .text-xs, .text-xs p, .text-xs div {font-size: 0.875rem;}
+}
+
+.content {
+  max-width: 35em;
+  margin: 0 auto;
+}
+
+/* Button */
+
+.button,
+.button:link,
+.button:visited {
+  background: var(--button-color);
+  border: 3px solid var(--button-color);
+  color: var(--button-fg);
+  cursor: pointer;
+  display: flex;
+  font-family: inherit;
+  justify-content: center;
+  align-items: center;
+  font-weight: normal;
+  height: 48px;
+  position: relative;
+  transition: background 0.3s, border-color 0.3s, color 0.3s;
+  width: 100%;
+}
+
+.button:active,
+.button:link:active,
+.button:hover:active,
+.button:visited:active {
+  background: var(--button-engage-color);
+  border-color: var(--button-engage-color);
+}
+
+.button .spinner {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  margin-top: -16px;
+  --spinner-color: var(--button-fg);
+}
+
+.button:hover,
+a.button:hover {
+  background: var(--button-highlight-color);
+  border-color: var(--button-highlight-color);
+  text-decoration: none;
+}
+
+.button.button-disabled,
+.button.button-disabled:hover {
+  background: var(--button-color);
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* Spinner */
+
+@-webkit-keyframes dash-anim {
+  0% {stroke-dashoffset: 200;}
+  50% {stroke-dashoffset: 0; -webkit-transform:rotate(0deg);}
+  100% {stroke-dashoffset: 200; -webkit-transform:rotate(360deg);}
+}
+
+@keyframes dash-anim {
+  0% {stroke-dashoffset: 200;}
+  50% {stroke-dashoffset: 0; transform:rotate(0deg);}
+  100% {stroke-dashoffset: 200; transform:rotate(360deg);}
+}
+
+@-webkit-keyframes rotate-anim {
+  0% {-webkit-transform: rotate(0deg);}
+  100% {-webkit-transform: rotate(360deg);}
+}
+
+@keyframes rotate-anim {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
+
+.spinner-inner {
+  animation: 2.2s linear 0s infinite normal none running rotate-anim;
+  transform-origin: center center;
+  --spinner-track: rgba(0, 0, 0, 0.1);
+  --spinner-line: var(--spinner-color);
+}
+
+.spinner-circle {
+  animation: 4.84s linear 0s infinite normal none running dash-anim;
+  transition: stroke-dasharray 2000ms ease 0s, stroke 600ms ease 0s;
+  transform-origin: center center;
+}
+
+/* Inputs */
+
+.input {
+  background: var(--input-bg);
+  color: var(--input-fg);
+  border: 1px solid currentColor;
+  font-size: inherit;
+  height: 48px;
+  padding: 12px;
+  border-radius: 4px;
+  transition: color 0.1s;
+  width: 100%;
+}
+
+.input:focus {
+  color: var(--input-focus);
+}
+
+.input::placeholder {
+  color: var(--input-placeholder);
+}
+
+/* Swiper */
+
+.swipe-control {
+  opacity: 0.1;
+  transition: opacity 0.5s ease-in;
+}
+
+.swipe-control.swiper-above-threshold {
+  opacity: 1;
+  transition: opacity 0.7s ease-out;
+}
