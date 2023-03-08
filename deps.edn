@@ -8,4 +8,6 @@
                      cider/piggieback {:mvn/version "0.5.3"}
                      cjohansen/gadget-inspector {:mvn/version "0.2020.09.10"}
                      no.cjohansen/portfolio {:git/url "https://github.com/cjohansen/portfolio"
-                                             :sha "5f9d05e933a4e64af54740c016a7a81ddef583fc"}}}}}
+                                             :sha "5f9d05e933a4e64af54740c016a7a81ddef583fc"}}}
+  :build {:extra-paths ["build"]
+          :extra-deps {optimus/optimus {:mvn/version "2023-02-08"}}}}}

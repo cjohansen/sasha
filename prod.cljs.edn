@@ -1,0 +1,6 @@
+{:main sasha.portfolio
+ :optimizations :simple
+ :pretty-print true
+ :asset-path "/js/compiled/out"
+ :output-to "target/js/compiled/sasha.js"
+ :output-dir "target/js/compiled/out"}

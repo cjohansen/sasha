@@ -21,9 +21,7 @@
 (ui/start!
  {:config
   {:css-paths
-   ["/css/reset.css"
-    "/css/fonts.css"
-    "/css/sasha.css"
+   ["/css/sasha.css"
     "/css/theme-pinky.css"]
 
    :grid/options [{:title "8 x 8px"
