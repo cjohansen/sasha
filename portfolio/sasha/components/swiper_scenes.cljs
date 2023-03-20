@@ -47,19 +47,19 @@
 
 (defscene swipe-left
   (SwipeReveal
-   {:swipee [:div {:style (assoc styles :background "var(--woodsmoke)")}
+   {:swipee [:div {:style (assoc styles :background "var(--contrast-bg)")}
              "Drag me right"]
     :left [:div {:style (assoc styles :background "var(--lima)")} "OK!"]}))
 
 (defscene swipe-right
   (SwipeReveal
-   {:swipee [:div {:style (assoc styles :background "var(--woodsmoke)")}
+   {:swipee [:div {:style (assoc styles :background "var(--contrast-bg)")}
              "Drag me left"]
     :right [:div {:style (assoc styles :background "var(--mexican-rojo)")} "NO!"]}))
 
 (defscene swipe-both-ways
   (SwipeReveal
-   {:swipee [:div {:style (assoc styles :background "var(--woodsmoke)")}
+   {:swipee [:div {:style (assoc styles :background "var(--contrast-bg)")}
              "Drag me both ways"]
     :left [:div {:style (assoc styles :background "var(--lima)")} "OK!"]
     :right [:div {:style (assoc styles :background "var(--mexican-rojo)")} "NO!"]}))
@@ -68,7 +68,7 @@
   :param (atom {})
   [store]
   (SwipeReveal
-   {:swipee [:div {:style (assoc styles :background "var(--woodsmoke)")}
+   {:swipee [:div {:style (assoc styles :background "var(--contrast-bg)")}
              "Dragging right yields a transition"]
     :left [:div {:style (assoc styles
                                :transition "background 0.5s"
@@ -84,7 +84,7 @@
   :param (atom {})
   [store]
   (SwipeReveal
-   {:swipee [:div {:style (assoc styles :background "var(--woodsmoke)")}
+   {:swipee [:div {:style (assoc styles :background "var(--contrast-bg)")}
              "Dragging left yields a transition"]
     :right [:div {:style (assoc styles
                                 :transition "background 0.5s"
@@ -100,7 +100,7 @@
   :param (atom {})
   [store]
   (SwipeReveal
-   {:swipee [:div {:style (assoc styles :background "var(--woodsmoke)")}
+   {:swipee [:div {:style (assoc styles :background "var(--contrast-bg)")}
              "Drag me both ways"]
     :left [:div {:style (assoc styles
                                :background "var(--lima)"
@@ -138,7 +138,7 @@
                     :overflow "hidden"}
             :leaving-style {:height 0}}
       (SwipeReveal
-       {:swipee [:div {:style (assoc styles :background "var(--woodsmoke)")}
+       {:swipee [:div {:style (assoc styles :background "var(--contrast-bg)")}
                  "Drag me left"]
         :right [:div {:style (assoc styles
                                     :background "var(--mexican-rojo)"
@@ -170,11 +170,13 @@
              :bottom 0}}
     [:div {:style styles} "NO!"]]
    [:div.swipee
-    [:div {:style (assoc styles :background "var(--woodsmoke)")}
+    [:div {:style (assoc styles :background "var(--contrast-bg)")}
      "Drag me right"]]))
 
 (defscene custom-swipable
-  :param (atom {})
+  :param (atom
+          {:left-threshold [0.1 0.2]
+           :snap-left 0.3})
   [store]
   [:div
    (when (:retry? @store)
@@ -194,9 +196,7 @@
               :on-snap-left (fn []
                               (swap! store assoc :gone? true)
                               (js/setTimeout #(swap! store assoc :retry? true :active? false) 1000))
-              ))])]
-  {:left-threshold [0.1 0.2]
-   :snap-left 0.3})
+              ))])])
 
 (defcomponent CustomSwipeRight
   :on-mount swiper/mount-swiper
@@ -215,11 +215,13 @@
              :bottom 0}}
     [:div {:style (assoc styles :justify-content "flex-end")} "NO!"]]
    [:div.swipee
-    [:div {:style (assoc styles :background "var(--woodsmoke)")}
+    [:div {:style (assoc styles :background "var(--contrast-bg)")}
      "Drag me left"]]))
 
 (defscene custom-swipable-other-side
-  :param (atom {})
+  :param (atom
+          {:right-threshold [0.1 0.5]
+           :snap-right 0.3})
   [store]
   [:div
    (when (:retry? @store)
@@ -239,7 +241,4 @@
               :on-snap-right (fn []
                                (swap! store assoc :gone? true)
                                (js/setTimeout #(swap! store assoc :retry? true :active? false) 1000))
-              ))])]
-  {:right-threshold [0.1 0.5]
-   :snap-right 0.3})
-
+              ))])])

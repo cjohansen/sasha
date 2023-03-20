@@ -4,7 +4,8 @@
             [clojure.string :as str]))
 
 (defn- touch-x [e]
-  (some-> e .-changedTouches (aget 0) .-screenX))
+  (or (some-> e .-changedTouches (aget 0) .-screenX)
+      (.-screenX e)))
 
 (defn- parse-num [v]
   #?(:cljs
@@ -146,6 +147,7 @@
            pos (atom {:x 0 :left 0})
            touchstart (fn [e]
                         (reset! pos {:x (touch-x e)
+                                     :engaged? true
                                      :left (parse-num (.-left (.-style swipee)))
                                      :left-threshold (first (:left-threshold props))
                                      :right-threshold (first (:right-threshold props))
@@ -154,34 +156,36 @@
            touchmove
            (fn [e]
              (when-let [event-x (touch-x e)]
-               (let [direction-update (get-direction-update @pos event-x)
-                     {:keys [x left direction]} @pos
-                     direction (or direction-update direction)
-                     left-pos (+ left (- event-x x))
-                     target-direction (get-target-direction left direction left-el right-el)]
-                 (when direction-update
-                   (swap! pos assoc :direction direction-update)
-                   (let [[hide show] (if (= :left target-direction)
-                                       [right-el left-el]
-                                       [left-el right-el])]
-                     (when hide
-                       (when-not (.-originalDisplay hide)
-                         (set! (.-originalDisplay hide)
-                               (.getPropertyValue (js/getComputedStyle hide) "display")))
-                       (set! (.. hide -style -display) "none"))
-                     (when (and show (.-originalDisplay show))
-                       (set! (.. show -style -display)
-                             (.-originalDisplay show)))))
-                 (when (or (not= 0 left)
-                           (< (:swipe-threshold props) (abs (- left left-pos))))
-                   (.preventDefault e)
-                   (let [new-left (case target-direction
-                                    :left (js/Math.max left-pos 0)
-                                    :right (js/Math.min left-pos 0)
-                                    0)]
-                     (fire-threshold-events pos props new-left left-el right-el)
-                     (set-left swipee new-left))))))
-           touchend (fn [e]
+               (when (:engaged? @pos)
+                 (let [direction-update (get-direction-update @pos event-x)
+                       {:keys [x left direction]} @pos
+                       direction (or direction-update direction)
+                       left-pos (+ left (- event-x x))
+                       target-direction (get-target-direction left direction left-el right-el)]
+                   (when direction-update
+                     (swap! pos assoc :direction direction-update)
+                     (let [[hide show] (if (= :left target-direction)
+                                         [right-el left-el]
+                                         [left-el right-el])]
+                       (when hide
+                         (when-not (.-originalDisplay hide)
+                           (set! (.-originalDisplay hide)
+                                 (.getPropertyValue (js/getComputedStyle hide) "display")))
+                         (set! (.. hide -style -display) "none"))
+                       (when (and show (.-originalDisplay show))
+                         (set! (.. show -style -display)
+                               (.-originalDisplay show)))))
+                   (when (or (not= 0 left)
+                             (< (:swipe-threshold props) (abs (- left left-pos))))
+                     (.preventDefault e)
+                     (let [new-left (case target-direction
+                                      :left (js/Math.max left-pos 0)
+                                      :right (js/Math.min left-pos 0)
+                                      0)]
+                       (fire-threshold-events pos props new-left left-el right-el)
+                       (set-left swipee new-left)))))))
+           touchend (fn [_e]
+                      (swap! pos dissoc :engaged?)
                       (let [{:keys [left direction]} @pos
                             start-x left
                             right-width (some-> right-el .-clientWidth)
@@ -200,7 +204,7 @@
                                             (< (* left-width (:snap-left props)) diff))
                                        left-width
 
-                                       :default 0)]
+                                       :else 0)]
 
                         (fire-threshold-events pos props new-left left-el right-el)
                         (animate-left-pos swipee new-left)

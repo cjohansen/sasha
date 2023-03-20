@@ -40,6 +40,7 @@
 .dark-mode {
   --bg: var(--mine-shaft);
   --fg: var(--mercury);
+  --contrast-bg: var(--woodsmoke);
   --input-bg: var(--cod-gris);
   --input-fg: var(--scorpion);
   --input-placeholder: var(--scorpion);
@@ -48,6 +49,7 @@
 
 .light-mode {
   --fg: var(--mine-shaft);
+  --contrast-bg: var(--mercury);
   --input-bg: #fff;
   --input-fg: var(--scorpion);
   --input-placeholder: var(--scorpion);
