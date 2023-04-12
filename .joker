@@ -1,0 +1,3 @@
+{:known-macros [dumdom.core/defcomponent portfolio.dumdom/defscene]
+ :rules {:if-without-else true
+         :unused-fn-parameters true}}
