@@ -4,12 +4,14 @@
             [sasha.components.button-scenes]
             [sasha.components.completion-input-scenes]
             [sasha.components.spinner-scenes]
-            [sasha.components.swiper-scenes]))
+            [sasha.components.swiper-scenes]
+            [sasha.icons-scenes]))
 
 ::sasha.components.button-scenes/keep
 ::sasha.components.completion-input-scenes/keep
 ::sasha.components.spinner-scenes/keep
 ::sasha.components.swiper-scenes/keep
+::sasha.icons-scenes/keep
 
 (set! dumdom.component/*render-eagerly?* true)
 
