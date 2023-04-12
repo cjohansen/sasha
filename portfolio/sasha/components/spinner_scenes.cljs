@@ -1,9 +1,6 @@
 (ns sasha.components.spinner-scenes
-  (:require [portfolio.dumdom :refer-macros [defscene defns]]
+  (:require [portfolio.dumdom :refer-macros [defscene]]
             [sasha.components.spinner :refer [Spinner]]))
-
-(defns Spinner
-  :group :components)
 
 (defscene spinner
   [:div {:style {:max-width 100}}

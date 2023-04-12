@@ -1,12 +1,9 @@
 (ns sasha.components.swiper-scenes
   (:require [dumdom.core :refer [defcomponent]]
-            [portfolio.dumdom :refer-macros [defns defscene]]
+            [portfolio.dumdom :refer-macros [defscene]]
             [sasha.components.swiper :as swiper :refer [SwipeControl SwipeReveal]]
             [sasha.icons.check :as check]
             [sasha.icons.trash :as trash]))
-
-(defns Swiper
-  :group :components)
 
 (def styles
   {:display "flex"
@@ -37,7 +34,7 @@
    [:p {:style {:margin-bottom 10}} "Click it to toggle state"]
    [:div {:style {:height 50
                   :position "relative"}
-          :onClick (fn [e] (swap! store update :clicked? not))}
+          :onClick (fn [_e] (swap! store update :clicked? not))}
     (SwipeControl
      {:content (check/check {:color "#ffffff"
                              :size 24})

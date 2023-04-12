@@ -1,9 +1,6 @@
 (ns sasha.components.button-scenes
-  (:require [portfolio.dumdom :refer-macros [defscene defns]]
+  (:require [portfolio.dumdom :refer-macros [defscene]]
             [sasha.components.button :refer [Button]]))
-
-(defns Button
-  :group :components)
 
 (defscene button
   (Button {:text "Click it"

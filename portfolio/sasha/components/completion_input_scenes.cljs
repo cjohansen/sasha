@@ -1,10 +1,7 @@
 (ns sasha.components.completion-input-scenes
   (:require [clojure.string :as str]
-            [portfolio.dumdom :refer-macros [defscene defns]]
+            [portfolio.dumdom :refer-macros [defscene]]
             [sasha.components.completion-input :refer [CompletionInput]]))
-
-(defns "Completion Input"
-  :group :components)
 
 (defscene empty-input
   (CompletionInput {}))

@@ -7,7 +7,8 @@
                      com.bhauman/figwheel-main {:mvn/version "0.2.18"}
                      cider/piggieback {:mvn/version "0.5.3"}
                      cjohansen/gadget-inspector {:mvn/version "0.2020.09.10"}
-                     no.cjohansen/portfolio {:git/url "https://github.com/cjohansen/portfolio"
-                                             :sha "ee9a0e5097ba6552c668ff816bd9b8f10b598d90"}}}
+                     no.cjohansen/portfolio #_{:mvn/version "2023.03.21"}
+                     {:git/url "https://github.com/cjohansen/portfolio"
+                      :sha "b897ecf8431a761079849c835035fb4d98bf65a8"}}}
   :build {:extra-paths ["build"]
           :extra-deps {optimus/optimus {:mvn/version "2023-02-08"}}}}}

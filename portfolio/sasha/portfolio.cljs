@@ -1,6 +1,5 @@
 (ns sasha.portfolio
   (:require [dumdom.component]
-            [portfolio.data :as data]
             [portfolio.ui :as ui]
             [sasha.components.button-scenes]
             [sasha.components.completion-input-scenes]
@@ -11,10 +10,6 @@
 ::sasha.components.completion-input-scenes/keep
 ::sasha.components.spinner-scenes/keep
 ::sasha.components.swiper-scenes/keep
-
-(data/register-collection!
- {:id :components
-  :title "Components"})
 
 (set! dumdom.component/*render-eagerly?* true)
 
