@@ -47,7 +47,7 @@
   --input-disabled-fg: var(--mine-shaft-light);
   --input-placeholder: var(--scorpion);
   --input-focus: var(--mercury);
-  --error: var(--mexican-rojo);
+  --error: var(--brick-rojo);
 }
 
 .light-mode {
