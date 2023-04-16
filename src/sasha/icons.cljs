@@ -277,7 +277,8 @@
 (defn render [icon & [{:keys [size color style on-click]}]]
   [:span {:on-click on-click
           :style
-          (cond-> {:display "inline-block"}
+          (cond-> {:display "inline-block"
+                   :line-height "1"}
             size (assoc :height size)
             size (assoc :width size)
             color (assoc :color color)
