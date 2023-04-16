@@ -43,15 +43,21 @@
   --contrast-bg: var(--woodsmoke);
   --input-bg: var(--cod-gris);
   --input-fg: var(--scorpion);
+  --input-disabled-bg: var(--cod-gris);
+  --input-disabled-fg: var(--mine-shaft-light);
   --input-placeholder: var(--scorpion);
   --input-focus: var(--mercury);
+  --error: var(--mexican-rojo);
 }
 
 .light-mode {
   --fg: var(--mine-shaft);
   --contrast-bg: var(--mercury);
-  --input-bg: #fff;
+  --input-bg: #f8f8f8;
   --input-fg: var(--scorpion);
+  --input-disabled-bg: var(--mercury);
+  --input-disabled-fg: #999;
   --input-placeholder: var(--scorpion);
   --input-focus: var(--woodsmoke);
+  --error: var(--mexican-rojo);
 }

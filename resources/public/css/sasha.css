@@ -165,6 +165,15 @@ a.button:hover {
   transform-origin: center center;
 }
 
+/* Flexy */
+
+@media only screen and (min-width: 600px) {
+  .row {
+    display: flex;
+    align-items: center;
+  }
+}
+
 /* Inputs */
 
 .input {
@@ -185,6 +194,40 @@ a.button:hover {
 
 .input::placeholder {
   color: var(--input-placeholder);
+}
+
+/* Labeled input */
+
+.li-label {
+  display: block;
+  flex: 0 0 30%;
+  margin: 0 0 10px;
+  white-space: nowrap;
+}
+
+@media only screen and (min-width: 600px) {
+  .li-label {
+    margin: 0;
+  }
+}
+
+.li-input[disabled] {
+  background: var(--input-disabled-bg);
+  color: var(--input-disabled-fg);
+}
+
+.error,
+.error .input {
+  color: var(--error);
+}
+
+.li-addendums {
+  margin-left: 30%;
+  font-size: 0.9rem;
+}
+
+.li-addendums .row {
+  margin: 10px 0;
 }
 
 /* Swiper */
