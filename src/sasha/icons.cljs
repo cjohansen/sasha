@@ -85,12 +85,6 @@
     [:rect {:x "-4" :y "100" :width "176" :height "56" :rx "8" :transform "translate(212 44) rotate(90)" :fill "none" :stroke "currentColor" :stroke-linecap "round" :stroke-linejoin "round" :stroke-width "16"}]
     [:rect {:x "84" :y "100" :width "176" :height "56" :rx "8" :transform "translate(300 -44) rotate(90)" :fill "none" :stroke "currentColor" :stroke-linecap "round" :stroke-linejoin "round" :stroke-width "16"}]]
 
-   ::cross
-   [:svg {:fill "none"
-          :viewBox "0 0 256 256"}
-    [:line {:x1 "200" :y1 "56" :x2 "56" :y2 "200" :stroke "currentColor" :stroke-linecap "round" :stroke-linejoin "round" :stroke-width "16"}]
-    [:line {:x1 "200" :y1 "200" :x2 "56" :y2 "56" :stroke "currentColor" :stroke-linecap "round" :stroke-linejoin "round" :stroke-width "16"}]]
-
    ::cube
    [:svg {:fill "currentColor"
           :viewBox "0 0 256 256"}
