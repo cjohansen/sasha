@@ -37,7 +37,7 @@
   --subtle-border: var(--mine-shaft);
 }
 
-.dark-mode {
+.dark {
   --bg: var(--mine-shaft);
   --fg: var(--mercury);
   --contrast-bg: var(--woodsmoke);
@@ -48,9 +48,12 @@
   --input-placeholder: var(--scorpion);
   --input-focus: var(--mercury);
   --error: var(--brick-rojo);
+  --bellow-bg: var(--bg);
+  --bellow-zebra-bg: var(--mine-shaft-light);
+  --bellow-border: var(--scorpion);
 }
 
-.light-mode {
+.light {
   --fg: var(--mine-shaft);
   --contrast-bg: var(--mercury);
   --input-bg: #f8f8f8;

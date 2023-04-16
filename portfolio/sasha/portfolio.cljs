@@ -27,6 +27,17 @@
    ["/css/sasha.css"
     "/css/theme-pinky.css"]
 
+   :background/options [{:id :light
+                         :title "Light"
+                         :value {:background/background-color "#fff"
+                                 :background/body-class "light"}}
+                        {:id :dark
+                         :title "Dark"
+                         :value {:background/background-color "#282828"
+                                 :background/body-class "dark"}}]
+
+   :background/default-option-id :light
+
    :grid/options [{:title "8 x 8px"
                    :value {:grid/offset 0
                            :grid/size 8

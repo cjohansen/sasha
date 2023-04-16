@@ -14,7 +14,7 @@
 (defcomponent Bellow
   [{:keys [title toggle content actions on-click]}]
   [:div.bellow {:style {:border-bottom "1px solid var(--bellow-border)"}}
-   [:div.row
+   [:div.row.row-s
     {:on-click (or actions on-click)
      :style {:justify-content "space-between"
              :padding 12
