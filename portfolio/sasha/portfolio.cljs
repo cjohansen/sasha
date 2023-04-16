@@ -1,6 +1,7 @@
 (ns sasha.portfolio
   (:require [dumdom.component]
             [portfolio.ui :as ui]
+            [sasha.components.accordion-scenes]
             [sasha.components.button-scenes]
             [sasha.components.completion-input-scenes]
             [sasha.layouts.form-scenes]
@@ -9,6 +10,7 @@
             [sasha.components.swiper-scenes]
             [sasha.icons-scenes]))
 
+::sasha.components.accordion-scenes/keep
 ::sasha.components.button-scenes/keep
 ::sasha.components.completion-input-scenes/keep
 ::sasha.layouts.form-scenes/keep

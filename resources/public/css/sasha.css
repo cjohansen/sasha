@@ -205,12 +205,6 @@ a.button:hover {
   white-space: nowrap;
 }
 
-@media only screen and (min-width: 600px) {
-  .li-label {
-    margin: 0;
-  }
-}
-
 .li-input[disabled] {
   background: var(--input-disabled-bg);
   color: var(--input-disabled-fg);
@@ -222,12 +216,21 @@ a.button:hover {
 }
 
 .li-addendums {
-  margin-left: 30%;
   font-size: 0.9rem;
 }
 
 .li-addendums .row {
   margin: 10px 0;
+}
+
+@media only screen and (min-width: 600px) {
+  .li-label {
+    margin: 0;
+  }
+
+  .li-addendums {
+    margin-left: 30%;
+  }
 }
 
 /* Forms */
@@ -256,4 +259,18 @@ a.button:hover {
 .swipe-control.swiper-above-threshold {
   opacity: 1;
   transition: opacity 0.7s ease-out;
+}
+
+/* Accordions */
+
+.bellow {
+  background: var(--bellow-bg);
+}
+
+/* .bellow + .bellow { */
+/*   border-top: 1px solid var(--bellow-border); */
+/* } */
+
+.bellow:nth-child(even) {
+  background: var(--bellow-zebra-bg);
 }

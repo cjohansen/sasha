@@ -60,4 +60,7 @@
   --input-placeholder: var(--scorpion);
   --input-focus: var(--woodsmoke);
   --error: var(--mexican-rojo);
+  --bellow-bg: var(--bg);
+  --bellow-zebra-bg: #f8f8f8;
+  --bellow-border: var(--silver-chalice);
 }
