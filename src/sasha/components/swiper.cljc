@@ -274,3 +274,14 @@
             :top 0
             :bottom 0}}
    content])
+
+(defcomponent SwipeDelete [{:keys [text button-text]}]
+  (let [styles {:display "flex"
+                :align-items "center"
+                :padding "10px 20px"
+                :height "50px"}]
+    (SwipeReveal
+     {:swipee [:div {:style (assoc styles :background "var(--contrast-bg)")}
+               text]
+      :right [:div {:style (assoc styles :background "var(--mexican-rojo)" :color "#fff")}
+              button-text]})))
