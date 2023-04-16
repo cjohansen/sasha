@@ -3,6 +3,7 @@
             [portfolio.ui :as ui]
             [sasha.components.button-scenes]
             [sasha.components.completion-input-scenes]
+            [sasha.layouts.form-scenes]
             [sasha.components.labeled-input-scenes]
             [sasha.components.spinner-scenes]
             [sasha.components.swiper-scenes]
@@ -10,6 +11,7 @@
 
 ::sasha.components.button-scenes/keep
 ::sasha.components.completion-input-scenes/keep
+::sasha.layouts.form-scenes/keep
 ::sasha.components.labeled-input-scenes/keep
 ::sasha.components.spinner-scenes/keep
 ::sasha.components.swiper-scenes/keep

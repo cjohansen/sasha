@@ -230,6 +230,22 @@ a.button:hover {
   margin: 10px 0;
 }
 
+/* Forms */
+
+.form .line + .line {
+  margin-top: 20px;
+}
+
+/* Article text */
+
+.mod {
+  margin: 20px 0;
+}
+
+.article li {
+  margin: 10px 0;
+}
+
 /* Swiper */
 
 .swipe-control {

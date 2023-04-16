@@ -10,7 +10,8 @@
     [:input.input.li-input
      {:id id
       :value value
-      :disabled disabled?}]]
+      :disabled disabled?
+      :type "text"}]]
    (when (seq messages)
      [:div.li-addendums
       (for [{:keys [kind text icon]} messages]
