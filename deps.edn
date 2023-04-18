@@ -9,6 +9,6 @@
                      cjohansen/gadget-inspector {:mvn/version "0.2020.09.10"}
                      no.cjohansen/portfolio #_{:mvn/version "2023.03.21"}
                      {:git/url "https://github.com/cjohansen/portfolio"
-                      :sha "8bf10e32857ff4c718415e5c2da849e8c8ca01a8"}}}
+                      :sha "7b0b6809bb5ac17a359a1ee06628713657a108f6"}}}
   :build {:extra-paths ["build"]
           :extra-deps {optimus/optimus {:mvn/version "2023-02-08"}}}}}
