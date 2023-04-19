@@ -38,8 +38,6 @@
      (assoc :mobile? true))))
 
 (defscene input2-with-text
-  "`LabeledInput2` uses runtime data for responsive design instead
-   of relying on CSS media-queries."
   :params {:id "email-4"
            :label "Your email"
            :value "christian@kodemaker.no"}

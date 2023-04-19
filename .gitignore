@@ -4,3 +4,5 @@ dev-resources/public/js
 /figwheel-main.edn
 /target/
 .clj-kondo/.cache
+/.shadow-cljs/
+/public/

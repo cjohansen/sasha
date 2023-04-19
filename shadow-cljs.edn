@@ -1,0 +1,16 @@
+{:source-paths
+ ["src"
+  "portfolio"
+  "resources"
+  "dev-resources"]
+
+ :dependencies
+ [[no.cjohansen/portfolio "2023.04.05"]]
+
+ :dev-http {9800 ["public" "classpath:public"]}
+
+ :builds
+ {:portfolio
+  {:target :browser
+   :modules {:main {:init-fn sasha.portfolio/init}}
+   }}}

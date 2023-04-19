@@ -44,3 +44,5 @@
                            :grid/group-size 8}}
                   {:title "No grid"
                    :value {:grid/size 0}}]}})
+
+(defn init [])
