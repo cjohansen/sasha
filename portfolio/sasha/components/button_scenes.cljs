@@ -4,15 +4,13 @@
 
 (defscene button
   (Button {:text "Click it"
-           :href "/lul"}))
+           :href "#"}))
 
 (defscene disabled-button
   (Button {:text "Click it"
-           :href "/lul"
            :disabled? true}))
 
 (defscene button-with-spinner
   (Button {:text "Click it"
-           :href "/lul"
            :disabled? true
            :spinner? true}))
