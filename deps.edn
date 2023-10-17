@@ -5,6 +5,9 @@
         :extra-deps {org.clojure/clojure {:mvn/version "1.11.1"}
                      org.clojure/clojurescript {:mvn/version "1.11.60"}
                      com.bhauman/figwheel-main {:mvn/version "0.2.18"}
+                     reagent/reagent {:mvn/version "1.2.0"}
+                     cljsjs/react {:mvn/version "17.0.2-0"}
+                     cljsjs/react-dom {:mvn/version "17.0.2-0"}
                      cider/piggieback {:mvn/version "0.5.3"}
                      cjohansen/gadget-inspector {:mvn/version "0.2020.09.10"}
                      no.cjohansen/portfolio #_{:mvn/version "2023.03.21"}
